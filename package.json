@@ -1,0 +1,15 @@
+{
+  "name": "dominykasia",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "start": "bun index.ts",
+    "build": "bun scripts/build.ts",
+    "test": "bun test",
+    "check": "tsc --noEmit && bun test && bun run build"
+  },
+  "devDependencies": { "@types/bun": "latest" },
+  "peerDependencies": { "typescript": "^7" }
+}
