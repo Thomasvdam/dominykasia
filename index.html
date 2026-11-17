@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="One friend. Endless lore. A little photo archive made for swiping.">
+  <title>friendzone. — The friend edit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 3 3 8l5 5M3 8h10a7 7 0 1 1 0 14"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4M3 17l4-1 10-9h4M17 13l4 4-4 4M3 7l4 1 3 3m4 3 3 3h4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  </svg>
+  <header class="header">
+    <a class="brand" href="./" aria-label="friendzone home"><span class="brand-mark">✳</span>friendzone<span class="brand-dot">.</span></a>
+    <nav class="tabs" aria-label="Photo views">
+      <button class="tab active" id="deck-tab" aria-current="page">The deck</button>
+      <button class="tab" id="favorites-tab">Favorites <span id="favorites-count">0</span></button>
+    </nav>
+    <button class="add-button" data-help aria-label="Add photos"><svg><use href="#i-plus"/></svg><span>Add photos</span></button>
+  </header>
+  <main>
+    <section class="deck-view" id="deck-view" aria-labelledby="hero-title">
+      <div class="intro">
+        <div class="eyebrow"><span></span> THE FRIEND EDIT · VOL. 01</div>
+        <h1 id="hero-title">One friend.<br> Endless <span class="lore">lore.<svg viewBox="0 0 230 20" aria-hidden="true"><path d="M3 13Q100-3 225 9M30 18Q130 5 211 13"/></svg></span></h1>
+        <p class="intro-copy">The good angles. The questionable outfits.<br> The moments that deserve another look.</p>
+        <p class="intro-prompt">A little appreciation. One swipe at a time.</p>
+        <div class="instructions"><div class="instruction-icons"><span>←</span><span>→</span></div><p>Swipe right for the hall of fame.<br>Left? We’ll pretend it never happened.</p></div>
+        <div class="edition"><span class="edition-star">✳</span><span>100% friend.<br><strong>Zero dating involved.</strong></span></div>
+      </div>
+      <div class="deck-area">
+        <div class="deck-topline"><span><i></i> A VERY PERSONAL COLLECTION</span><button id="shuffle-top" title="Shuffle the deck" aria-label="Shuffle the deck"><svg><use href="#i-shuffle"/></svg></button></div>
+        <div class="card-stack" id="card-stack">
+          <div class="back-card back-two"></div><div class="back-card back-one"></div>
+          <article class="photo-card" id="photo-card" tabindex="0" aria-label="Photo card. Swipe or use left and right arrow keys.">
+            <img id="card-photo" alt="" draggable="false" fetchpriority="high">
+            <div class="image-fallback" id="image-fallback" hidden><span>✳</span><p>This photo is playing hard to get.</p><small>Try the next one.</small></div>
+            <div class="card-shade"></div>
+            <div class="card-top"><span class="photo-badge" id="photo-badge">THE ARCHIVE</span><span class="card-number" id="card-number">01 / 06</span></div>
+            <div class="swipe-stamp stamp-like" id="stamp-like">ICONIC</div><div class="swipe-stamp stamp-pass" id="stamp-pass">NEXT</div>
+            <div class="card-bottom"><div><span class="photo-category" id="photo-category">A MOMENT IN TIME</span><h2 id="photo-title">The golden hour one</h2><p id="photo-subtitle">Main character energy, obviously.</p></div><span class="card-sparkle">✧</span></div>
+          </article>
+          <div class="empty-deck" id="empty-deck" hidden><span>✳</span><h2>That’s the whole lore.</h2><p>A solid collection. An even better friend.</p><button class="primary-button" id="restart">One more round <svg><use href="#i-undo"/></svg></button><button class="text-button" id="see-favorites">Visit the hall of fame →</button></div>
+        </div>
+        <div class="controls" role="group" aria-label="Photo actions">
+          <button class="control small" id="undo" aria-label="Undo last swipe" title="Undo last swipe" disabled><svg><use href="#i-undo"/></svg></button>
+          <button class="control pass" id="pass" aria-label="Pass on this photo" title="Pass (left arrow)"><svg><use href="#i-close"/></svg></button>
+          <button class="control like" id="like" aria-label="Add photo to favorites" title="Favorite (right arrow)"><svg><use href="#i-heart"/></svg></button>
+          <button class="control small" id="shuffle" aria-label="Shuffle remaining photos" title="Shuffle remaining photos"><svg><use href="#i-shuffle"/></svg></button>
+        </div>
+        <div class="deck-progress"><span id="progress-label">01 / 06</span><div class="progress-track"><div id="progress-fill"></div></div><span>A GOOD LOOK, EVERY TIME</span></div>
+      </div>
+      <div class="margin-note"><span>the camera<br>loves them.</span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M66 5C75 45 43 59 8 52m0 0 16-8M8 52l15 14"/></svg></div>
+    </section>
+    <section class="favorites-view" id="favorites-view" hidden aria-labelledby="favorites-title"><div class="eyebrow">ONLY THE ICONIC ONES</div><h1 id="favorites-title">The hall of <span>fame.</span></h1><p>Your favorite moments, all in one place.</p><div id="favorites-grid" class="favorites-grid"></div><div id="favorites-empty" class="favorites-empty"><svg><use href="#i-heart"/></svg><h2>Great taste starts here.</h2><p>Heart a photo in the deck to save it here.</p><button class="primary-button" id="back-to-deck">Explore the deck <svg><use href="#i-arrow"/></svg></button></div></section>
+    <section class="archive" id="archive" aria-labelledby="archive-title"><div class="archive-heading"><div><span class="section-index">01 —</span><h2 id="archive-title">A peek at the archive</h2><span class="archive-count" id="archive-count">6 moments & counting</span></div><button class="text-button" id="view-all">View all <svg><use href="#i-arrow"/></svg></button></div><div class="archive-grid" id="archive-grid"></div></section>
+  </main>
+  <footer><span>A little corner of the internet, just for our friend.</span><span>MADE WITH LOVE <svg><use href="#i-heart"/></svg> & A CAMERA ROLL</span></footer>
+  <dialog id="help-dialog"><button class="dialog-close" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button><span class="dialog-star">✳</span><h2>Make it your friend’s.</h2><p>Add your pictures to the <code>photos/</code> folder in the repo, then run <code>bun run build</code>. The deck picks them up automatically.</p><p>Name files like <code>the-golden-hour-one.jpg</code> — filenames become captions. JPG, PNG, WebP, AVIF, and GIF are welcome.</p><p class="dialog-note">The current images are demo photos. Your pictures replace them as soon as you add any.</p><button class="primary-button" data-close>Got it <svg><use href="#i-arrow"/></svg></button></dialog>
+  <dialog id="gallery-dialog"><div class="gallery-heading"><h2>The whole archive</h2><button class="dialog-close" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button></div><p>Pick a moment to jump into the deck.</p><div class="gallery-grid" id="gallery-grid"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
