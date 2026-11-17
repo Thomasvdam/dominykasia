@@ -2,7 +2,7 @@ import { resolve, sep } from 'node:path';
 import { catalog } from './scripts/catalog';
 
 const root = import.meta.dir;
-const allowed = new Set(['index.html', 'styles.css', 'app.js', 'deck.js']);
+const allowed = new Set(['index.html', 'styles.css', 'app.js', 'deck.js', 'captions.js']);
 const server = Bun.serve({
   port: Number(process.env.PORT || 3000),
   hostname: '0.0.0.0',

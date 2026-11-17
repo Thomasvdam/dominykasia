@@ -2,7 +2,7 @@
 
 Put JPG, JPEG, PNG, WebP, AVIF, or GIF images directly in this directory. Photos are discovered automatically by `bun run dev` and `bun run build`, in filename order. No manifest to maintain.
 
-Use descriptive filenames: `01-the-golden-hour-one.jpg` becomes “01 the golden hour one.” Avoid a numeric prefix if you don't want it in the caption. Demo photos disappear when this folder contains at least one supported image.
+Filenames provide accessible image labels. The visible anime titles and blurbs are generated procedurally in the browser each time a card appears, so no captions need to be written. Demo photos disappear when this folder contains at least one supported image.
 
 Prefer reasonably sized images (around 1200px on the long edge). Images are displayed as portrait cards with a center crop; the original files aren't modified.
 
