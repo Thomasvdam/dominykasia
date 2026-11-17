@@ -1,5 +1,6 @@
 import { photos, isDemo } from './photos.js';
 import { Deck } from './deck.js';
+import { createCaption } from './captions.js';
 
 const $ = id => document.getElementById(id);
 const deck = new Deck(photos);
@@ -26,7 +27,9 @@ function render() {
     $('image-fallback').hidden = true;
     image.src = photo.src;
     image.alt = photo.title;
-    $('photo-title').textContent = photo.title;
+    const caption = createCaption();
+    $('photo-title').textContent = caption.title;
+    $('photo-blurb').textContent = caption.blurb;
     $('photo-badge').hidden = !isDemo;
     const next = photos.find(item => item.id === deck.remaining[1]);
     if (next) { const preload = new Image(); preload.src = next.src; }
