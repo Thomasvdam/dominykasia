@@ -1,6 +1,6 @@
-# friendzone.
+# Dominykasia
 
-A static, Tinder-inspired photo deck for your friend. Swipe right to save a favorite, left to pass. Supports touch/mouse gestures, arrow keys, undo, shuffle, and a liked count stored in the visitor's browser. The card layout is capped at 420px wide on desktop.
+A static, Tinder-inspired photo deck for your friend. Swipe right to like a photo, left to pass. Supports touch/mouse gestures, arrow keys, and a liked count for the current visit. Every load starts a newly shuffled deck; no progress or likes are stored between visits. The card layout is capped at 420px wide on desktop.
 
 ## Add pictures
 
@@ -52,5 +52,5 @@ The agent's current GitHub connection has repository **write** access but cannot
 - No frontend dependencies or build bundler; HTML, CSS, and JavaScript run directly in the browser.
 - Bun is used only for local serving, discovering images, tests, and copying the static output.
 - Demo photos load from Unsplash. Real repo photos and all other assets are served locally by the site.
-- Favorites are per browser and reference filenames. Renaming an image resets its saved favorite identity. Passing never deletes a previous like. Undo reverses the most recent action.
+- Likes are kept in memory for the current round only. Starting another round resets the liked count.
 - No pictures are uploaded by the UI. On a public Pages site, committed images are publicly accessible.

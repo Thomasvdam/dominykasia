@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { catalog } from './catalog';
 
 test('catalog handles spaces and special characters safely and excludes non-images', async () => {
-  const root = await mkdtemp(join(tmpdir(), 'friendzone-'));
+  const root = await mkdtemp(join(tmpdir(), 'dominykasia-'));
   try {
     await mkdir(join(root, 'photos'));
     await Bun.write(join(root, 'photos', 'a-friend #1.JPG'), 'image');
@@ -20,7 +20,7 @@ test('catalog handles spaces and special characters safely and excludes non-imag
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 test('an empty photo directory uses the demo catalog', async () => {
-  const root = await mkdtemp(join(tmpdir(), 'friendzone-'));
+  const root = await mkdtemp(join(tmpdir(), 'dominykasia-'));
   try {
     await mkdir(join(root, 'photos'));
     await Bun.write(join(root, 'photos.js'), 'demo catalog');
