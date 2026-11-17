@@ -20,9 +20,32 @@ bun run check   # type checking, focused tests, and static build
 bun run build   # produces dist/, ready for any static host
 ```
 
-## GitHub Pages
+## GitHub Pages and dominyk.asia
 
-Push this repo to GitHub. Under **Settings → Pages → Build and deployment**, choose **GitHub Actions**. The included workflow deploys `dist/` on pushes to `main`, or when manually triggered. Relative asset paths support both repository and custom-domain sites.
+The intended address is **https://dominyk.asia**. `CNAME` records this domain in the repository and is copied into `dist/`. This project deploys with GitHub Actions, so GitHub ignores the `CNAME` file for domain routing: an administrator must also save the domain in repository settings.
+
+1. Merge the app PR into `main` when ready to publish.
+2. Open [repository Pages settings](https://github.com/Thomasvdam/dominykasia/settings/pages). Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Under **Custom domain**, enter `dominyk.asia` and click **Save**, before pointing DNS at GitHub.
+4. At the domain's DNS provider, add these records. `@` means the root domain (`dominyk.asia`). Use the provider's default/automatic TTL.
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | thomasvdam.github.io |
+
+The `www` record is optional; it lets GitHub redirect `www.dominyk.asia` to the canonical root domain. Replace conflicting parking or old hosting records for `@` and `www`; preserve unrelated records such as email MX/TXT records. Remove old `AAAA` records pointing to other hosts if present.
+
+5. Wait for the DNS check and certificate issuance in Pages settings, then enable **Enforce HTTPS** when available. DNS propagation can take up to 24 hours.
+
+The included workflow deploys `dist/` on pushes to `main`, or when manually triggered from the Actions tab. If Pages was enabled after the merge and the initial deployment failed, rerun the deployment workflow.
+
+Reference: [GitHub's custom-domain configuration](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+The agent's current GitHub connection has repository **write** access but cannot administer Pages; an administrator must perform steps 2–3 and the HTTPS setting. No DNS records or live Pages settings have been changed by this implementation.
 
 ## Details
 
