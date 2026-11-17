@@ -46,8 +46,6 @@ main, .deck-view { flex: 1; display: flex; flex-direction: column; min-height: 0
 .control.like svg { fill: currentColor; stroke-width: 1; width: 27px; height: 27px; }
 .empty-deck { position: absolute; inset: 0; border: 1px solid var(--line); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
 .empty-deck h2 { font-size: 25px; font-weight: 600; letter-spacing: -.7px; margin: 0; }
-.primary-button { padding: 12px 18px; display: inline-flex; align-items: center; gap: 14px; background: var(--ink); color: white; border-radius: 6px; font-size: 13px; }
-.primary-button svg { width: 16px; height: 16px; }
 .image-fallback { position: absolute; inset: 0; background: #b8bfac; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #3f4c36; padding: 20px; text-align: center; }
 .image-fallback p { font-size: 18px; }
 .image-fallback small { font-size: 12px; }

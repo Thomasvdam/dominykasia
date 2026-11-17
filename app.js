@@ -57,7 +57,6 @@ async function swipe(like) {
 }
 $('like').addEventListener('click', () => swipe(true));
 $('pass').addEventListener('click', () => swipe(false));
-$('restart').addEventListener('click', () => { deck.restart(); render(); });
 
 let drag = null;
 card.addEventListener('pointerdown', event => {
