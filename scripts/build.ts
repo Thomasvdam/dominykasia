@@ -5,9 +5,10 @@ const root = join(import.meta.dir, '..');
 const output = join(root, 'dist');
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const file of ['index.html', 'styles.css', 'app.js', 'deck.js', 'captions.js', 'CNAME']) {
+for (const file of ['index.html', 'styles.css', 'app.js', 'deck.js', 'captions.js', 'CNAME', 'favicon.ico', 'site.webmanifest']) {
   await cp(join(root, file), join(output, file));
 }
+await cp(join(root, 'assets'), join(output, 'assets'), { recursive: true });
 await cp(join(root, 'photos'), join(output, 'photos'), { recursive: true });
 await Bun.write(join(output, 'photos.js'), await catalog(root));
 await Bun.write(join(output, '.nojekyll'), '');

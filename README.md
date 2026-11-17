@@ -54,3 +54,11 @@ The agent's current GitHub connection has repository **write** access but cannot
 - Demo photos load from Unsplash. Real repo photos and all other assets are served locally by the site.
 - Likes are kept in memory for the current visit, including across automatic repeats. Liking the same photo again counts it only once. Reloading resets the liked count.
 - No pictures are uploaded by the UI. On a public Pages site, committed images are publicly accessible.
+
+## Icons and social previews
+
+The HTML includes canonical, Open Graph, and Twitter/X large-image metadata for `https://dominyk.asia/`. Crawlers can read these tags without running JavaScript. `assets/social-preview.png` is a static 1200×630 share card composed from the site's existing anime art; image descriptions are included in the tags.
+
+The cat-eared D mark is supplied as an SVG favicon, an ICO containing 16px/32px variants, PNG fallbacks, an Apple touch icon, and 192px/512px manifest icons. All assets are committed and copied to `dist/`, so deployment needs no image tools.
+
+Artwork sources: `assets/favicon.svg` and `scripts/branding.html`. To regenerate the raster assets after editing them, run `bun scripts/render-branding.ts` with the optional `agent-browser` CLI installed. This authoring tool renders the existing HTML/SVG; it does not generate new illustrations. The share-card source references two files in `photos/`, so update its paths if those images are renamed or removed. Social platforms may cache the previous preview until they fetch the URL again.
