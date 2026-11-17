@@ -18,4 +18,4 @@ const server = Bun.serve({
     return new Response(file, { headers: { 'Cache-Control': 'no-store' } });
   },
 });
-console.log(`friendzone. is ready at ${server.url}`);
+console.log(`Dominykasia is ready at ${server.url}`);

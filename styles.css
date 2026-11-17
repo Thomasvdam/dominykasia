@@ -20,7 +20,6 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .app-shell { width: 100%; max-width: 420px; height: min(100svh, 860px); display: flex; flex-direction: column; padding: 0 18px 18px; }
 .header { height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 2px; }
 .header h1 { font-size: 23px; font-weight: 750; letter-spacing: -1.2px; margin: 0; }
-.header h1 > span { color: var(--orange); }
 .liked-count { display: flex; align-items: center; gap: 7px; font-size: 13px; font-variant-numeric: tabular-nums; }
 .liked-count svg { color: #c65c35; width: 17px; height: 17px; fill: currentColor; }
 main, .deck-view { flex: 1; display: flex; flex-direction: column; min-height: 0; }
@@ -34,7 +33,6 @@ main, .deck-view { flex: 1; display: flex; flex-direction: column; min-height: 0
 .card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #0004, transparent 25%, transparent 65%, #000b); pointer-events: none; }
 .card-top { position: absolute; inset: 18px 18px auto; display: flex; align-items: center; justify-content: space-between; color: white; gap: 12px; }
 .photo-badge { font-size: 9px; letter-spacing: 1px; background: #25282070; border: 1px solid #fff5; padding: 6px 8px; border-radius: 4px; }
-.card-number { margin-left: auto; font-size: 11px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 4px #0008; }
 .photo-title { position: absolute; bottom: 24px; left: 22px; right: 22px; margin: 0; font-size: 25px; font-weight: 650; letter-spacing: -.7px; line-height: 1.2; color: white; overflow-wrap: anywhere; }
 .swipe-stamp { position: absolute; top: 75px; border: 4px solid; padding: 7px 12px; border-radius: 7px; font-size: 35px; font-weight: 800; opacity: 0; pointer-events: none; }
 .stamp-like { left: 22px; color: #b6f6b2; transform: rotate(-15deg); }
@@ -42,15 +40,10 @@ main, .deck-view { flex: 1; display: flex; flex-direction: column; min-height: 0
 .controls { flex-shrink: 0; height: 100px; display: flex; justify-content: center; align-items: center; gap: 20px; }
 .control { width: 62px; height: 62px; display: grid; place-items: center; border-radius: 50%; transition: transform .18s; }
 .control:hover:not(:disabled) { transform: translateY(-2px); }
-.control.small { width: 42px; height: 42px; border: 1px solid var(--line); color: var(--muted); }
-.control.small svg { width: 18px; height: 18px; }
 .control.pass { border: 1px solid #d9dcd0; background: #fbfbf6; color: #6b775f; }
 .control.pass svg { width: 27px; height: 27px; }
 .control.like { background: var(--orange); color: white; box-shadow: 0 5px 15px #ef754b26; }
 .control.like svg { fill: currentColor; stroke-width: 1; width: 27px; height: 27px; }
-.deck-progress { height: 13px; flex-shrink: 0; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
-.progress-track { height: 2px; background: var(--line); flex: 1; }
-.progress-track > div { height: 100%; background: #859473; transition: width .25s; }
 .empty-deck { position: absolute; inset: 0; border: 1px solid var(--line); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
 .empty-deck h2 { font-size: 25px; font-weight: 600; letter-spacing: -.7px; margin: 0; }
 .primary-button { padding: 12px 18px; display: inline-flex; align-items: center; gap: 14px; background: var(--ink); color: white; border-radius: 6px; font-size: 13px; }
