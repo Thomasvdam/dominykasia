@@ -4,7 +4,7 @@ A static, Tinder-inspired photo deck for your friend. Swipe right to like a phot
 
 ## Add pictures
 
-Put images directly in `photos/`. JPG, PNG, WebP, AVIF, and GIF are supported. Each card gets a procedurally generated anime title and absurd lore blurb, with fresh text whenever it appears—even on repeat loops. This runs entirely in the browser, without an AI service. Filenames are used only as accessible photo labels, with hyphens and underscores replaced by spaces. The demo photos are replaced automatically when real images are present. No upload service, database, or account is needed.
+Put images directly in `photos/`. JPG, PNG, WebP, AVIF, and GIF are supported. Each card gets a procedurally generated anime title and absurd lore blurb, with fresh text whenever it appears—even on repeat loops. The generator rotates through different narrative formats, avoids recent exact repeats, and uses distinct odd-sized word and template banks. This runs entirely in the browser, without an AI service. Filenames are used only as accessible photo labels, with hyphens and underscores replaced by spaces. The demo photos are replaced automatically when real images are present. No upload service, database, or account is needed.
 
 ## Local development
 
