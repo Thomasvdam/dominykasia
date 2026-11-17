@@ -1,6 +1,6 @@
 # friendzone.
 
-A static, Tinder-inspired photo deck for your friend. Swipe right to save a favorite, left to pass. Supports touch/mouse gestures, arrow keys, undo, shuffle, an archive, and a favorites collection stored in the visitor's browser.
+A static, Tinder-inspired photo deck for your friend. Swipe right to save a favorite, left to pass. Supports touch/mouse gestures, arrow keys, undo, shuffle, and a liked count stored in the visitor's browser. The card layout is capped at 420px wide on desktop.
 
 ## Add pictures
 
@@ -24,12 +24,10 @@ bun run build   # produces dist/, ready for any static host
 
 Push this repo to GitHub. Under **Settings → Pages → Build and deployment**, choose **GitHub Actions**. The included workflow deploys `dist/` on pushes to `main`, or when manually triggered. Relative asset paths support both repository and custom-domain sites.
 
-The source repo currently has no configured Git remote, so no GitHub repository or live deployment has been created by this implementation.
-
 ## Details
 
 - No frontend dependencies or build bundler; HTML, CSS, and JavaScript run directly in the browser.
 - Bun is used only for local serving, discovering images, tests, and copying the static output.
-- Demo photos load from Unsplash; Google Fonts are optional, with system-font fallbacks. Real repo photos are served locally by the site.
-- Favorites are per browser and reference filenames. Renaming an image resets its saved favorite identity. Passing never deletes a previously saved favorite; remove it from the Favorites view.
+- Demo photos load from Unsplash. Real repo photos and all other assets are served locally by the site.
+- Favorites are per browser and reference filenames. Renaming an image resets its saved favorite identity. Passing never deletes a previous like. Undo reverses the most recent action.
 - No pictures are uploaded by the UI. On a public Pages site, committed images are publicly accessible.
